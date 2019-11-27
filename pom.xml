@@ -27,11 +27,6 @@
             <version>5.1.5.RELEASE</version>
         </dependency>
         <dependency>
-            <groupId>org.redisson</groupId>
-            <artifactId>redisson</artifactId>
-            <version>3.11.3</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>5.1.5.RELEASE</version>
@@ -42,6 +37,17 @@
             <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>5.1.5.RELEASE</version>
+        </dependency>
+
 
     </dependencies>
 
@@ -113,39 +119,6 @@
                 </plugins>
             </build>
         </profile>
-
-<!--        <profile>-->
-<!--            <id>cargo.run</id>-->
-<!--            <build>-->
-<!--                <plugins>-->
-<!--                    <plugin>-->
-<!--                        <groupId>org.codehaus.cargo</groupId>-->
-<!--                        <artifactId>cargo-maven2-plugin</artifactId>-->
-<!--                        <configuration>-->
-<!--                            <configuration>-->
-<!--                                <configfiles>-->
-<!--                                    <configfile>-->
-<!--                                        <file>${project.basedir}/conf/catalina-logging.properties</file>-->
-<!--                                        <todir>conf/</todir>-->
-<!--                                        <tofile>logging.properties</tofile>-->
-<!--                                    </configfile>-->
-<!--                                </configfiles>-->
-<!--                            </configuration>-->
-<!--                            <deployables>-->
-<!--                                <deployable>-->
-<!--                                    <location>${project.basedir}/target/test-case.war</location>-->
-<!--                                    <type>war</type>-->
-<!--                                    <properties>-->
-<!--                                        <context>/test-case</context>-->
-<!--                                    </properties>-->
-<!--                                </deployable>-->
-<!--                            </deployables>-->
-<!--                        </configuration>-->
-<!--                        <version>1.7.0</version>-->
-<!--                    </plugin>-->
-<!--                </plugins>-->
-<!--            </build>-->
-<!--        </profile>-->
 
     </profiles>
 
