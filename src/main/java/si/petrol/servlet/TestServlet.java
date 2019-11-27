@@ -10,7 +10,6 @@ import java.io.IOException;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import si.petrol.spring.beans.MyBean;
-import si.petrol.spring.beans.TestPlainSessionBean;
 
 @WebServlet(name = "/testServlet", urlPatterns = "/*")
 public class TestServlet extends HttpServlet {
@@ -22,20 +21,6 @@ public class TestServlet extends HttpServlet {
             WebApplicationContext application = WebApplicationContextUtils.getRequiredWebApplicationContext(getServletContext());
             MyBean testSessionBean = application.getBean(MyBean.class);
             testSessionBean.manageSessionBean();
-        }
-
-        if (req.getPathInfo().contains("/test-http-session")) {
-
-            TestPlainSessionBean testPlainSessionBean = (TestPlainSessionBean) session.getAttribute("testPlainSessionBean");
-            if (testPlainSessionBean == null) {
-                testPlainSessionBean = new TestPlainSessionBean();
-            }
-            if (testPlainSessionBean.getValue() == null || testPlainSessionBean.getValue().equals("")) {
-                testPlainSessionBean.setValue("789");
-                session.setAttribute("testPlainSessionBean", testPlainSessionBean);
-            }
-            System.out.println("Value : " + testPlainSessionBean.getValue());
-
         }
 
     }
